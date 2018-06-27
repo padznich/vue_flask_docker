@@ -6,7 +6,7 @@ const app = new Vue({
     },
     methods: {
       deleteUser(id, i) {
-        fetch("/api/users/" + id + "/", {
+        fetch("/home/api/users/" + id + "/", {
           method: "DELETE"
         })
         .then(() => {
@@ -14,7 +14,7 @@ const app = new Vue({
         })
       },
       updateUser(user) {
-        fetch("/api/users/" + user.id + "/", {
+        fetch("/home/api/users/" + user.id + "/", {
           body: JSON.stringify(user),
           method: "PUT",
           headers: {
@@ -27,7 +27,7 @@ const app = new Vue({
       }
     },
     mounted() {
-      fetch("/api/users/", {
+      fetch("/home/api/users/", {
         method: "GET"
       })
         .then(response => response.json())
