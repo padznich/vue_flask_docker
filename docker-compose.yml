@@ -1,5 +1,6 @@
 version: '2.0'
 services:
+
   web:
     restart: always
     build:
@@ -7,6 +8,24 @@ services:
       dockerfile: ./web/Dockerfile
     ports:
      - "5000:5000"
+    links:
+      - postgres:postgres
     volumes:
       - ./code/p1:/app
-    command: python /app/app.py
+    command: python /app/manage.py migrate
+    command: python /app/manage.py runserver 0.0.0.0:5000
+
+  postgres:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./postgres/Dockerfile
+    environment:
+      - POSTGRES_USER=skelet
+      - POSTGRES_PASSWORD=skelet
+      - POSTGRES_DB=skelet
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/
+
