@@ -1,6 +1,12 @@
 version: '2.0'
 services:
   web:
-    build: .
+    restart: always
+    build:
+      context: .
+      dockerfile: ./web/Dockerfile
     ports:
      - "5000:5000"
+    volumes:
+      - ./code/p1:/app
+    command: python /app/app.py
