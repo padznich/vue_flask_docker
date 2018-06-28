@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h3>Users:</h3>
       <li v-for="user, i in users">
         <div v-if="editUser === user.id">
           <input v-on:keyup.13="updateUser(user)" v-model="user.username" />
@@ -17,19 +18,24 @@
 <script>
 export default {
   name: 'Users',
-  editUser: null,
-  users: [],
+  data () {
+    return {
+      msg: 'Hi',
+      editUser: null,
+      users: []
+    }
+  },
   methods: {
-    deleteUser(id, i) {
-      fetch("/home/api/users/" + id + "/", {
+    deleteUser: function(id, i) {
+      fetch("http://localhost:5000/home/api/users/" + id + "/", {
         method: "DELETE"
       })
       .then(() => {
         this.users.splice(i, 1);
       })
     },
-    updateUser(user) {
-      fetch("/home/api/users/" + user.id + "/", {
+    updateUser: function(user) {
+      fetch("http://localhost:5000/home/api/users/" + user.id + "/", {
         body: JSON.stringify(user),
         method: "PUT",
         headers: {
@@ -41,8 +47,8 @@ export default {
       })
     }
   },
-  mounted() {
-    fetch("/home/api/users/", {
+  mounted: function() {
+    fetch("http://localhost:5000/home/api/users/", {
       method: "GET"
     })
       .then(response => response.json())
@@ -50,11 +56,6 @@ export default {
         this.users = data;
       })
   },
-  data () {
-    return {
-      users: this.users
-    }
-  }
 }
 </script>
 
