@@ -3,7 +3,7 @@
     <h3>Sign In</h3>
     <input v-model="email" type="text" placeholder="Email"/><br/>
     <input v-model="password" type="password" placeholder="Password"/><br/>
-    <button v-on:click="signIn">Connect</button>
+    <button v-on:click:keyup.13="signIn">Connect</button>
     <p>You don't have an account? You can <router-link to="/signup">create one</router-link></p>
   </div>
 </template>

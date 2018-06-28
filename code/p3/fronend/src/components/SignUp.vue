@@ -3,7 +3,7 @@
     <h3>Create a new account</h3>
     <input v-model="email" type="text" placeholder="Email"/><br/>
     <input v-model="password" type="password" placeholder="Password"/><br/>
-    <button v-on:click="signUp">Sign Up</button>
+    <button v-on:click:keyup.13="signUp">Sign Up</button>
     <span>Or go back to <router-link to="/login">login</router-link></span>
   </div>
 </template>

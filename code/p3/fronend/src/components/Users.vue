@@ -5,7 +5,7 @@
       <li>
         <div v-if="editUser === user.id">
           <input v-on:keyup.13="updateUser(user)" v-model="user.username" />
-          <button v-on:click="updateUser(user)" class="commonButton">save</button>
+          <button v-on:click:keyup.13="updateUser(user)" class="commonButton">save</button>
         </div>
         <div v-else>
           <button v-on:click="editUser = user.id" class="editUser">edit</button>
