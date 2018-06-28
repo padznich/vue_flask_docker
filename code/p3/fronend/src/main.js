@@ -5,7 +5,7 @@ import firebase from 'firebase'
 
 
 import App from './App'
-import router from './router'
+import router from './router/router'
 
 
 Vue.config.productionTip = false;
@@ -18,7 +18,7 @@ let config = {
   projectId: "YOUR_PROJECT_ID",
   storageBucket: "YOUR_PROJECT_ID.appspot.com",
   messagingSenderId: "YOUR_MESSAGING_SEND_ID"
-}
+};
 
 firebase.initializeApp(config);
 
