@@ -32,10 +32,13 @@ export default {
 
 <style scoped>
 
-  nav {
-    margin: 10px 0;
-    padding: 15px;
+  a {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    text-decoration: none;
+    color: #2c3e50;
   }
-
 </style>
 

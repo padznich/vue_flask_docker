@@ -1,7 +1,8 @@
 <template>
   <div>
     <h3>Users:</h3>
-      <li v-for="user, i in users">
+    <ul v-for="user, i in users" :key="user.id">
+      <li>
         <div v-if="editUser === user.id">
           <input v-on:keyup.13="updateUser(user)" v-model="user.username" />
           <button v-on:click="updateUser(user)" class="commonButton">save</button>
@@ -12,7 +13,11 @@
           {{user.username}}
         </div>
       </li>
+    </ul>
+    <div>
+      <span>Total Users Number: {{ users.length }} </span>
     </div>
+  </div>
 </template>
 
 <script>
@@ -66,6 +71,7 @@ export default {
     font-weight: normal;
   }
   ul {
+    text-align: left;
     list-style-type: none;
     padding: 0;
   }
