@@ -4,11 +4,11 @@
       <li v-for="user, i in users">
         <div v-if="editUser === user.id">
           <input v-on:keyup.13="updateUser(user)" v-model="user.username" />
-          <button v-on:click="updateUser(user)">save</button>
+          <button v-on:click="updateUser(user)" class="commonButton">save</button>
         </div>
         <div v-else>
-          <button v-on:click="editUser = user.id">edit</button>
-          <button v-on:click="deleteUser(user.id, i)">x</button>
+          <button v-on:click="editUser = user.id" class="editUser">edit</button>
+          <button v-on:click="deleteUser(user.id, i)" class="deleteUser">x</button>
           {{user.username}}
         </div>
       </li>
@@ -61,18 +61,37 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
+  h1, h2 {
+    font-weight: normal;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  a {
+    color: #42b983;
+  }
+  button {
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 22px;
+    outline: 0;
+    cursor: pointer;
+  }
+  button.commonButton {
+    background: #1c86b9;
+  }
+  button.editUser {
+    background: #42b983;
+  }
+  button.deleteUser {
+    background: #B91122;
+  }
 </style>
