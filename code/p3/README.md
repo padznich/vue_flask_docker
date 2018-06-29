@@ -12,7 +12,7 @@
     
     vue init webpack frontend  # vue init <template-name> <project-name>
     
-    
+    npm install firebase
     
     
     ```

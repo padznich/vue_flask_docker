@@ -146,6 +146,7 @@ STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8081',  # npm server
+    'localhost:8082',  # npm server
 )
 
 CORS_ALLOW_METHODS = (

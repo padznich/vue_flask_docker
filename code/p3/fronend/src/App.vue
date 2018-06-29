@@ -5,6 +5,7 @@
       <nav>
         <span><router-link to="/hello">Home</router-link></span>
         <span><router-link to="/users">Users</router-link></span>
+        <span><router-link to="/list">List</router-link></span>
       </nav>
     </div>
 

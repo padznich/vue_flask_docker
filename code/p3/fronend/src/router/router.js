@@ -6,6 +6,7 @@ import Hello from '@/components/Hello'
 import Login from '@/components/Login'
 import SignUp from '@/components/SignUp'
 import Users from '@/components/Users'
+import List from '@/components/List'
 
 
 Vue.use(Router);
@@ -45,6 +46,11 @@ let router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '/list',
+      name: 'List',
+      component: List
     }
   ]
 });
