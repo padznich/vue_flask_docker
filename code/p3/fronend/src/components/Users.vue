@@ -25,7 +25,6 @@ export default {
   name: 'Users',
   data () {
     return {
-      msg: 'Hi',
       editUser: null,
       users: []
     }

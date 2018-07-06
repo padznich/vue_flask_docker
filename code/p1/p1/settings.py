@@ -25,7 +25,13 @@ SECRET_KEY = '63*@vyn1pnc3mt)d#f)v=hlf07dh1w&msisuy2g*jwa5$02d#3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '172.19.0.1',
+    '172.19.0.3',
+
+]
 
 
 # Application definition
@@ -148,6 +154,8 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:8081',  # npm server
     'localhost:8082',  # npm server
 )
+
+# CORS_URLS_REGEX = r'^/home/api/.*$'
 
 CORS_ALLOW_METHODS = (
     'DELETE',

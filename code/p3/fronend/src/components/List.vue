@@ -1,8 +1,7 @@
 <template lang="pug">
 div
-  div
-    div(v-for="item in items.artists" v-bind:key="item.id")
-      .artist
+  div(v-for="item in items.artists" v-bind:key="item.id")
+    .artist
       img.artist__image(v-bind:src="item.image")
       h4.text-center {{ item.title }}
 </template>
@@ -12,7 +11,6 @@ div
     name: 'List',
     data() {
       return {
-        msg: 'Artists List',
         items: {
           'artists': [
             {

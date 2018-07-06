@@ -6,3 +6,6 @@
 
 # JS
 node_modules
+
+# Postgresql
+pgdata
