@@ -7,6 +7,7 @@ import Login from '@/components/Login'
 import SignUp from '@/components/SignUp'
 import Users from '@/components/Users'
 import List from '@/components/List'
+import Counter from '@/components/Counter'
 
 
 Vue.use(Router);
@@ -51,6 +52,11 @@ let router = new Router({
       path: '/list',
       name: 'List',
       component: List
+    },
+    {
+      path: '/counter',
+      name: 'Counter',
+      component: Counter
     }
   ]
 });
